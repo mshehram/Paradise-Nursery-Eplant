@@ -3,116 +3,116 @@ const plantsData = {
     {
       id: 1,
       name: "Snake Plant",
-      image: "/src/assets/images/plant1.png",
+      image: "/assets/images/snake_plant.jpeg",
       price: "15.99",
       description: "Excellent at filtering toxins and improving indoor"
     },
     {
       id: 2,
-      name: "Peace Lily",
-      image: "/src/assets/images/plant1.png",
+      name: "Aloe Vera",
+     image: "/assets/images/alerovera.jpeg",
       price: "18.50",
-      description: "Cleanses indoor air and adds elegance with its white blooms."
+      description: "Purifies the air and offers soothing gel for skin"
     },
     {
       id: 3,
-      name: "Spider Plant",
-      image: "/src/assets/images/plant1.png",
+      name: "Peace Lily",
+      image: "/assets/images/peace.webp",
       price: "$12.00",
-      description: "Effective in removing carbon monoxide ."
+      description: "Removes harmful gases and adds elegance to interio"
     },
     {
       id: 4,
-      name: "ZZ Plant",
-      image: "/src/assets/images/plant1.png",
+      name: "Spider Plant",
+      image: "/assets/images/spider-plant.jpeg",
       price: "22.00",
-      description: "Excellent for filtering air pollutants and requires minimal maintenance."
+      description: "Great beginner-friendly plant that cleanses indoor"
     },
     {
       id: 5,
-      name: "Aloe Vera",
-      image: "/src/assets/images/plant1.png",
+      name: "Boston Fern",
+      image: "/assets/images/rubberteree.jpg",
       price: "10.99",
-      description: "Purifies air while providing soothing gel for skin and minor burns."
+      description: "Naturally humidifies air and removes formaldehyde."
     },
     {
       id: 6,
-      name: "Pothos",
-      image: "/src/assets/images/plant1.png",
+      name: "Areca Palm",
+      image: "/assets/images/archia.webp",
       price: "13.50",
-      description: "Great at removing toxins and ideal for low-light, indoor spaces."
+      description: "A natural humidifier that removes carbon monoxide"
     },
     {
       id: 7,
-      name: "Rubber Plant",
-     image: "/src/assets/images/plant1.png",
+      name: "Chinese Evergreen",
+     image: "/assets/images/chinees.jpg",
       price: "25.00",
-      description: "Improves air quality and adds a lush, tropical touch to interiors."
+      description: "Low-maintenance plant that removes air pollutants"
     },
     {
       id: 8,
-      name: "Boston Fern",
-     image: "/src/assets/images/plant1.png",
+      name: "Rubber Plant",
+     image: "https://react-eplantshoping.vercel.app/assets/images/rubbertree.jpg",
       price: "17.75",
-      description: "Adds humidity to the air and removes harmful indoor pollutants."
+      description: "Absorbs airborne chemicals and adds a bold, gloss"
     }
   ],
   FragrantPlants: [
     {
       id: 9,
-      name: "Rose",
-    image: "/src/assets/images/plant1.png",
+      name: "Lavender",
+  image: "/assets/images/levender.jpg",
       price: "20.00",
-      description: "Sweet-scented blooms that refresh indoor air and elevate any décor."
+      description: "A calming fragrance that promotes relaxation"
     },
     {
       id: 10,
-      name: "Lavender",
-      image: "/src/assets/images/plant1.png",
+      name: "Jasmine",
+     image: "/assets/images/jasmine-flower.webp",
       price: "14.99",
-      description: "Emits a calming fragrance known to reduce stress and improve sleep."
+      description: "Famous for its sweet fragrance that uplifts mood a"
     },
     {
       id: 11,
-      name: "Hibiscus",
-  image: "/src/assets/images/plant1.png",
+      name: "Rosemary",
+image: "https://react-eplantshoping.vercel.app/assets/images/rosery.jpeg",
       price: "19.99",
-      description: "Bright, tropical flowers that bring color and a fresh aroma indoors."
+      description: "An aromatic herb that enhances focus and air fresh"
     },
     {
       id: 12,
-      name: "Marigold",
-     image: "/src/assets/images/plant1.png",
+      name: "Gardenia",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUuKtSQJgeJziWkp3bk0ppTpOqNnAq4e4Utz-q8_RFECEYIZIB6M6LjlueKcl6tX8JOKs&usqp=CAU",
       price: "9.99",
-      description: "Vibrant blooms that release a subtle scent and deter indoor pests."
+      description: "Beautiful white flowers with a rich, pleasant frag"
     },
     {
       id: 13,
-      name: "Sunflower",
-      image: "/src/assets/images/plant1.png",
+      name: "Lemon Balm",
+      image: "	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkfJhBE2XGeH_ThX40DSTvJkE9Y0QWYyv3sQ&s",
       price: "8.50",
-      description: "Uplifting scent and sunny look that brightens any corner of your home."
+      description: "Releases a gentle lemon scent that freshens up any"
     },
     {
       id: 14,
-      name: "Bougainvillea",
-    image: "/src/assets/images/plant1.png",
+      name: "Rose",
+ image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPBO_MWINZPqTn3ZhUcccZ14vkyvrFwmN6lXwGybTeK6hfX5q6s6rqGUt4XuDkE7dBDSk&usqp=CAU",
       price: "23.00",
-      description: "Adds color and a light fragrance that enhances garden beauty."
+      description: "Classic fragrant flower loved for its beauty"
     },
     {
       id: 15,
-      name: "Jasmine",
-   image: "/src/assets/images/plant1.png",
+      name: "Mint",
+   image: "	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZTdFDBjQHaHTs-L0a9YT55CSaYHGqs9hchA&s",
       price: "16.75",
-      description: "Produces a rich, sweet fragrance ideal for relaxation and evening ambiance."
+      description: "Fresh aroma that adds a natural refreshing scent"
     },
     {
       id: 16,
-      name: "Bamboo",
-    image: "/src/assets/images/plant1.png",
+      name: "Chamomile",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_vx_zpVmJsQv2WA_jYhiC8GSBnfRWQkr-ww&s",
       price: "28.00",
-      description: "Cleanses indoor air and creates a peaceful, natural atmosphere."
+      description: "Delicate fragrance that soothes and relaxes "
     }
   ]
 };

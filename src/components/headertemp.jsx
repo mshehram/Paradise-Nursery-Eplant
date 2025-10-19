@@ -8,10 +8,10 @@ const Header = () => {
   return (
     <nav className="fixed top-0 bg-[#4caf50] py-3 text-white w-screen z-[1000] shadow-md">
       <div className="relative max-w-[1200px] mx-auto px-5 flex items-center h-14">
-        {/* Logo left */}
+       
         <Link to="/" className="flex items-center gap-[10px] text-white no-underline">
           <img
-            src="/src/assets/images/logo.jpeg"
+            src="/assets/images/logo.jpeg"
             width={50}
             height={50}
             alt="Logo"
