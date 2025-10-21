@@ -23,7 +23,6 @@ const Header = () => {
           </div>
         </Link>
 
-        {/* Center menu */}
         <ul className="hidden md:flex list-none gap-6 font-semibold absolute left-1/2 transform -translate-x-1/2">
           <li>
             <Link to="/plant" className="text-white">
@@ -32,7 +31,6 @@ const Header = () => {
           </li>
         </ul>
 
-        {/* Cart right */}
         <ul className="hidden md:flex list-none gap-6 font-semibold ml-auto">
           <li>
             <Link to="/cart" className="text-white">
@@ -41,7 +39,6 @@ const Header = () => {
           </li>
         </ul>
 
-        {/* Hamburger menu for mobile */}
         <div className="md:hidden flex items-center ml-auto">
           <button onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
@@ -49,7 +46,6 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile menu */}
       {menuOpen && (
         <div className="md:hidden bg-[#4caf50] w-full px-5 py-4">
           <ul className="flex flex-col gap-4 list-none text-center">

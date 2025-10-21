@@ -4,14 +4,16 @@ export default function Home() {
   return (
     <div
       className="relative w-screen bg-center bg-cover flex items-center justify-center text-white min-h-[auto] lg:min-h-[100vh]"
-      style={{ backgroundImage: "url('/src/assets/images/tree.jpg')" }}
+      style={{
+        backgroundImage: "url('/images/tree.jpg')",
+      }}
     >
-      {/* Overlay */}
+      
       <div className="absolute inset-0 bg-black/80 z-10"></div>
 
-      {/* Content */}
+    
       <div className="relative z-20 flex flex-col lg:flex-row items-center justify-start gap-16 px-6 lg:px-[5%] py-16 lg:py-32 w-full">
-        {/* Left Section */}
+      
         <div className="w-full lg:w-1/3 flex flex-col items-center text-center gap-2">
           <h1 className="text-3xl font-bold leading-snug">
             Welcome To <br /> Paradise Nursery
@@ -26,7 +28,6 @@ export default function Home() {
           </Link>
         </div>
 
-        {/* Right Section */}
         <div className="w-full lg:w-2/3 text-center lg:text-left space-y-3">
           <p className="text-[15px] text-gray-200">
             Welcome to Paradise Nursery, where green meets serenity.
