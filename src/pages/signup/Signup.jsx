@@ -1,35 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
+import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
 
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (formData.password !== formData.confirmPassword) {
-      alert("Passwords do not match!");
-      return;
-    }
-
-    localStorage.setItem("userData", JSON.stringify(formData));
+  const onSubmit = (data) => {
+    localStorage.setItem("userData", JSON.stringify(data));
     navigate("/login");
   };
+
+  const password = watch("password");
 
   return (
     <div
@@ -39,7 +26,7 @@ const Signup = () => {
       }}
     >
       <form
-        onSubmit={handleSubmit}
+        onSubmit={handleSubmit(onSubmit)}
         className="backdrop-blur-md bg-white/80 p-8 rounded-2xl shadow-2xl w-full max-w-md border border-white/30"
       >
         <h2 className="text-4xl font-extrabold mb-6 text-center text-gray-800 tracking-wide">
@@ -50,54 +37,77 @@ const Signup = () => {
           <label className="block text-gray-700 mb-2 font-medium">Full Name</label>
           <input
             type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
+            {...register("name", {
+              required: "Full name is required",
+              minLength: { value: 3, message: "Minimum 3 characters" },
+              pattern: {
+                value: /^[A-Za-z\s]+$/,
+                message: "Only letters are allowed",
+              },
+            })}
             placeholder="Enter your full name"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4caf50] focus:outline-none transition duration-300"
-            required
+            className={`w-full px-4 py-2 border ${
+              errors.name ? "border-red-500" : "border-gray-300"
+            } rounded-lg focus:ring-2 focus:ring-[#4caf50] focus:outline-none transition duration-300`}
           />
+          {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
         </div>
 
         <div className="mb-5">
           <label className="block text-gray-700 mb-2 font-medium">Email</label>
           <input
             type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
+            {...register("email", {
+              required: "Email is required",
+              pattern: {
+                value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}$/,
+                message: "Enter a valid email address",
+              },
+            })}
             placeholder="Enter your email"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4caf50] focus:outline-none transition duration-300"
-            required
+            className={`w-full px-4 py-2 border ${
+              errors.email ? "border-red-500" : "border-gray-300"
+            } rounded-lg focus:ring-2 focus:ring-[#4caf50] focus:outline-none transition duration-300`}
           />
+          {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
         </div>
 
         <div className="mb-5">
           <label className="block text-gray-700 mb-2 font-medium">Password</label>
           <input
             type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
+            {...register("password", {
+              required: "Password is required",
+              pattern: {
+                value: /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/,
+                message:
+                  "Password must have 1 uppercase, 1 number, and be at least 8 characters long",
+              },
+            })}
             placeholder="Enter password"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4caf50] focus:outline-none transition duration-300"
-            required
+            className={`w-full px-4 py-2 border ${
+              errors.password ? "border-red-500" : "border-gray-300"
+            } rounded-lg focus:ring-2 focus:ring-[#4caf50] focus:outline-none transition duration-300`}
           />
+          {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password.message}</p>}
         </div>
 
         <div className="mb-6">
-          <label className="block text-gray-700 mb-2 font-medium">
-            Confirm Password
-          </label>
+          <label className="block text-gray-700 mb-2 font-medium">Confirm Password</label>
           <input
             type="password"
-            name="confirmPassword"
-            value={formData.confirmPassword}
-            onChange={handleChange}
+            {...register("confirmPassword", {
+              required: "Please confirm your password",
+              validate: (value) => value === password || "Passwords do not match",
+            })}
             placeholder="Re-enter password"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4caf50] focus:outline-none transition duration-300"
-            required
+            className={`w-full px-4 py-2 border ${
+              errors.confirmPassword ? "border-red-500" : "border-gray-300"
+            } rounded-lg focus:ring-2 focus:ring-[#4caf50] focus:outline-none transition duration-300`}
           />
+          {errors.confirmPassword && (
+            <p className="text-red-500 text-sm mt-1">{errors.confirmPassword.message}</p>
+          )}
         </div>
 
         <button

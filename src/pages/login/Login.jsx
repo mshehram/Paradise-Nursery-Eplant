@@ -27,7 +27,7 @@ const Login = () => {
       storedUser.email === loginData.email &&
       storedUser.password === loginData.password
     ) {
-      navigate("/home");
+      navigate("/dashboard");
     } else {
       alert("Invalid email or password!");
     }
@@ -51,7 +51,7 @@ const Login = () => {
             value={loginData.email}
             onChange={handleChange}
             placeholder="Enter your email"
-            className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none"
+            className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-400 outline-none"
             required
           />
         </div>
@@ -64,7 +64,7 @@ const Login = () => {
             value={loginData.password}
             onChange={handleChange}
             placeholder="Enter your password"
-            className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none"
+            className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-400 outline-none"
             required
           />
         </div>
@@ -80,7 +80,7 @@ const Login = () => {
           Don’t have an account?{" "}
           <span
             onClick={() => navigate("/")}
-            className="text-blue-500 cursor-pointer hover:underline"
+            className="text-green-600 cursor-pointer hover:underline"
           >
             Sign up
           </span>
